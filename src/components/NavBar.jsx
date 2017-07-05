@@ -15,20 +15,20 @@ class NavBar extends Component {
   </span>
 
   <div className="nav-right nav-menu">
-    <a className="nav-item" target="_self" href="http://localhost:3000/?page=10">
+    <a className="nav-item"  href="/#/about">
       ABOUT
     </a>
 	
-    <a className="nav-item" target="_self" href="http://localhost:3000/?page=10">
+    <a className="nav-item"  href="/#/memberbenifits">
       MEMEBERSHIP BENIFITS
     </a>
-    <a className="nav-item" target="_self" href="http://localhost:3000/?page=10">
+    <a className="nav-item" href="/#/resources">
       RESOURCES
     </a>
-    <a className="nav-item" target="_self" href="http://localhost:3000/?page=10">
+    <a className="nav-item"  href="/#/blog">
       BLOG
     </a>
-	 <a className="nav-item" target="_self" href="http://localhost:3000/?page=10">
+	 <a className="nav-item"  href="/#/contact">
       CONTACT
     </a>
 

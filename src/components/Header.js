@@ -4,52 +4,61 @@ import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import Add_Blog from './Add_Blog';
 import 'bulma/css/bulma.css'
-
+var _get_hash=window.location.hash;
+var _path='home';
+if(_get_hash)
+{
+	if(_get_hash.length > 2)
+	{
+	var _path=_get_hash.substring(2);
+	}
+}
 var data = [
   {
     "text": "All",
     "onClick": "#",
-	"active":"active",
-	"url": 1
+	"active":"",
+	"url":"home"
   },
   {
     "text": "INVESTMENTS",
-    "url": 2
+    "url":"investments"
   },
   {
     "text": "FINANCE",
-    "url": 3
+    "url": "finance"
   },
    {
     "text": "CREDIT",
-    "url": 4
+    "url": "credit"
   },
    {
     "text": "FAIMILY",
-    "url":5
+    "url":"faimily"
   },
   {
     "text": "OTHER",
-    "url": 6
+    "url": "other"
+	
   },
   {
     "text": "MORE",
-    "url": 7
+    "url": "more"
   },
    {
     "text": "RUPEE",
-    "url": 8
+    "url": "rupee"
   }
   
 ];
 var NavBarLink = React.createClass({
 	getComponent: function(index) {
 		debugger;
-	window.open('http://localhost:3000/?page='+index,'_self')
+	
     },
     render: function() {
         return (
-           <a onClick={this.getComponent.bind(this,this.props.url)} >{this.props.text}</a>
+           <a href={"/#/"+this.props.url} onclick={this.getComponent(this.props.url)}>{this.props.text}</a>
         );
     }
 })
@@ -76,11 +85,16 @@ var NavBarItem = React.createClass({
     }
     return content;
   },
+  getComponent_new: function(_id) {
+       
+	
+    },
+
   render: function() {
     var content = this.generateContent();
-	var _active=(this.props.active?this.props.active:"");
+	var _active=(this.props.url==_path?"active":"")+" headerli";
     return (
-      <li className= {_active}>
+  <li id={"id_li_"+this.props.url} onClick={this.getComponent_new.bind(this,"id_li_"+this.props.url)} className= {_active}>
         {content}
       </li>
     );
@@ -107,8 +121,21 @@ constructor(props) {
 
    
     this.update_page_show_type = this.update_page_show_type.bind(this);
+ this.add_active_li = this.add_active_li.bind(this);
+  
+   _path='home';
+ _get_hash=window.location.hash;
+if(_get_hash)
+{
+	if(_get_hash.length > 2)
+	{
+	 _path=_get_hash.substring(2);
+	
+	
+	}
+}
 
-
+  
   }
 update_page_show_type (e)
 {
@@ -117,7 +144,10 @@ update_page_show_type (e)
 	Add_Blog_class.render(e);
 	Add_Blog_class.forceUpdate()
 }
-
+add_active_li(_id)
+{
+	debugger;
+}
   render() {
     return (
       <section className="hero is-info">

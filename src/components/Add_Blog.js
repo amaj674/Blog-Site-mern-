@@ -119,32 +119,7 @@ class Add_Blog extends Component {
   }
  debugger;
   render(_current_page_to_show) {
-	 
-	if(!_current_page_to_show)
-	{
-		_current_page_to_show=(this.props.show_page?parseInt(this.props.show_page):1);
-	}		
-	if(_current_page_to_show ===1)
-	{
-		if(!window.fetch_blog_call)
-		{
-			window.fetch_blog_call= setInterval(this.loadBlogsFromServer, this.props.pollInterval);
-		}
-	}
-	else
-	{
-		for(var i=0; i<100; i++)
-        {
-           window.clearInterval(i);
-        }
-		delete window.fetch_blog_call;
-		
-	}
-	
-switch (_current_page_to_show)
-{
-	case this.enum_for_render_page.home:
-	return (
+		return (
       <section className="section">
         <div className="container">
  <div className="row">
@@ -251,151 +226,13 @@ switch (_current_page_to_show)
         </div>
       </section>
     )
-	break;
-	case this.enum_for_render_page.invencement:
-	return (
-      <section className="section">
-        <div className="container">
- <div className="row">
-       <center><h1 className="blog_title blue_color">InvestMent</h1></center>
-		</div>
-		 <p className="image is-260*136">
-            <img alt="Avatar" src="images/page_is_under_construction.png" />
-          </p>
-        </div>
-      </section>
-    )
-	break;
-	case this.enum_for_render_page.invencement:
-	return (
-      <section className="section">
-        <div className="container">
- <div className="row">
-       <center><h1 className="blog_title blue_color">InvestMent</h1></center>
-		</div>
-		 <p className="image is-260*136">
-            <img alt="Avatar" src="images/page_is_under_construction.png" />
-          </p>
-        </div>
-      </section>
-    )
-	break;
-	case this.enum_for_render_page.finance:
-	return (
-      <section className="section">
-        <div className="container">
- <div className="row">
-       <center><h1 className="blog_title blue_color">Finance</h1></center>
-		</div>
-		 <p className="image is-260*136">
-            <img alt="Avatar" src="images/page_is_under_construction.png" />
-          </p>
-        </div>
-      </section>
-    )
-	break;
-	case this.enum_for_render_page.faimily:
-	return (
-      <section className="section">
-        <div className="container">
- <div className="row">
-       <center><h1 className="blog_title blue_color">Faimily</h1></center>
-		</div>
-		 <p className="image is-260*136">
-            <img alt="Avatar" src="images/page_is_under_construction.png" />
-          </p>
-        </div>
-      </section>
-    )
-	break;
-	case this.enum_for_render_page.credit:
-	return (
-      <section className="section">
-        <div className="container">
- <div className="row">
-       <center><h1 className="blog_title blue_color">Credit</h1></center>
-		</div>
-		 <p className="image is-260*136">
-            <img alt="Avatar" src="images/page_is_under_construction.png" />
-          </p>
-        </div>
-      </section>
-    )
-	break;
-	case this.enum_for_render_page.other:
-	return (
-      <section className="section">
-        <div className="container">
- <div className="row">
-       <center><h1 className="blog_title blue_color">other</h1></center>
-		</div>
-		 <p className="image is-260*136">
-            <img alt="Avatar" src="images/page_is_under_construction.png" />
-          </p>
-        </div>
-      </section>
-    )
-	break;
-	case this.enum_for_render_page.more:
-	return (
-      <section className="section">
-        <div className="container">
- <div className="row">
-       <center><h1 className="blog_title blue_color">More</h1></center>
-		</div>
-		 <p className="image is-260*136">
-            <img alt="Avatar" src="images/page_is_under_construction.png" />
-          </p>
-        </div>
-      </section>
-    )
-	break;
-	case this.enum_for_render_page.rupee:
-	return (
-      <section className="section">
-        <div className="container">
- <div className="row">
-       <center><h1 className="blog_title blue_color">Rupee</h1></center>
-		</div>
-		 <p className="image is-260*136">
-            <img alt="Avatar" src="images/page_is_under_construction.png" />
-          </p>
-        </div>
-      </section>
-    )
-	break;
-	case 10:
-	return (
-      <section className="section">
-        <div className="container">
- <div className="row">
-       
-		</div>
-		 <p className="image is-260*136">
-            <img alt="Avatar" src="images/page_is_under_construction.png" />
-          </p>
-        </div>
-      </section>
-    )
-	break;
-	default:
-	return (
-      <section className="section">
-        <div className="container">
- <div className="row">
-       
-		</div>
-		 <p className="image is-260*136">
-            <img alt="Avatar" src="images/page_is_under_construction.png" />
-          </p>
-        </div>
-      </section>
-    )
 	
-	break;
+	
+	
+	
 }	
     
-  }
+  
 }
 
 export default Add_Blog;
