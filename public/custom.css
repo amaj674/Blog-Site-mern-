@@ -1,0 +1,54 @@
+.menu {
+  list-style: none; 
+ 
+  /* This prevents a lot of problems with the submenus. 
+     UL have basic padding, keep that in mind */
+  padding: 15px;
+}
+
+.menu li {
+  /* I wanted mine horizontal. Feel free to change it to what you want */
+  display:inline-block;
+  padding: 5px;
+   border: 1px solid gray;
+}
+.blog_title{
+	font-size:29px
+}
+.blue_color{
+	color:#1a3054;
+}
+.gray_color
+{
+	color:gray;
+}
+.footer
+{
+	background-color:white;
+}
+.active   {
+  /* I wanted mine horizontal. Feel free to change it to what you want */
+  background-color:orange;
+}
+.menu li a {
+ 
+
+
+  /* My basic styling. I'm just giving them a black text, with a black border, and center the text in the box. */
+  text-decoration:none;
+ 
+  vertical-align: middle;
+  text-align: center;
+  padding-left:25px;
+  padding-right:25px;
+
+}
+
+
+
+.menu li:hover > ul {
+/* On hover, we get it back to its basic spot
+  left:0;
+/* And change the opacity to a fully visible one */
+  opacity: 1;
+};
